@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wisielec</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script defer type="text/javascript" src="js/script.js"></script>
+    <!--<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">-->
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class-col-md-12>
+            <h1 class="col-md-3">Wisielec</h1>
+            <span class="col-md-3">
+                <h3 id="timer"></h3>
+            </span>
+            <span class="col-md-3">
+                <h3 id="miss" >Pomyłki:</h3>
+            </span>
+            <span class="col-md-3">
+                <h3 id="record" >Rekord:</h3>
+                <p id="r-time"></p>
+                <p id="r-wins"></p>
+            </span>
+        </header>
+        <nav>
+        </nav>
+
+        <main class="col-md-12" class="game-content">
+            <section class="row col-md-12" id="word">
+            </section>
+
+            <section class="row col-md-6" id="gallows">
+                <img src="img/s0.jpg">
+            </section>
+<section class="row col-md-6" id="alphabet-container">
+    <!--<div id="alfabet"></div>-->
+    <span class="aplhabet-row col-md-12">
+                <button type="button" class="btn-letter" id="">A</button>
+                <button type="button" class="btn-letter" id="">Ą</button>
+                <button type="button" class="btn-letter" id="">B</button>
+                <button type="button" class="btn-letter" id="">C</button>
+                <button type="button" class="btn-letter" id="">Ć</button>
+                <button type="button" class="btn-letter" id="">D</button>
+                <button type="button" class="btn-letter" id="">E</button>
+                </span>
+    <span class="aplhabet-row col-md-12">
+                <button type="button" class="btn-letter" id="">Ę</button>
+                <button type="button" class="btn-letter" id="">F</button>
+                <button type="button" class="btn-letter" id="">G</button>
+                <button type="button" class="btn-letter" id="">H</button>
+                <button type="button" class="btn-letter" id="">I</button>
+                <button type="button" class="btn-letter" id="">J</button>
+                <button type="button" class="btn-letter" id="">K</button>
+                
+                </span>
+    <span class="aplhabet-row col-md-12">
+                 <button type="button" class="btn-letter" id="">L</button>
+                 <button type="button" class="btn-letter" id="">Ł</button>
+                 <button type="button" class="btn-letter" id="">M</button>
+                 <button type="button" class="btn-letter" id="">N</button>
+                 <button type="button" class="btn-letter" id="">Ń</button>
+                <button type="button" class="btn-letter" id="">O</button>
+                <button type="button" class="btn-letter" id="">Ó</button>
+                
+                 </span>
+    <span class="aplhabet-row col-md-12">
+                <button type="button" class="btn-letter" id="">P</button>
+                <button type="button" class="btn-letter" id="">Q</button>
+                <button type="button" class="btn-letter" id="">R</button>
+                <button type="button" class="btn-letter" id="">S</button>
+                <button type="button" class="btn-letter" id="">Ś</button>
+                <button type="button" class="btn-letter" id="">T</button>
+                <button type="button" class="btn-letter" id="">U</button>
+                 
+                </span>
+    <span class="aplhabet-row col-md-12">
+                <button type="button" class="btn-letter" id="">V</button>
+                <button type="button" class="btn-letter" id="">W</button>
+                <button type="button" class="btn-letter" id="">X</button>
+                <button type="button" class="btn-letter" id="">Y</button>
+                <button type="button" class="btn-letter" id="">Z</button>
+                <button type="button" class="btn-letter" id="">Ź</button>
+                <button type="button" class="btn-letter" id="">Ż</button> 
+            </span>
+</section>
+</main>
+</div>
+    <footer class="footer navbar navbar-inverse">
+        <p class="text-muted">Projekt na zaliczenie przedmiotu "Programowanie kreatywne" 2017 </p>
+       <p>v1.2.0</p>
+
+    </footer>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Gra w wisielca!</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Zasady:</h4>
+                    <p>Zgadnij jak najwięcej powiedzeń zanim utworzy się cały obrazek wisielca.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-start" class="btn btn-default" data-dismiss="modal">Start</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

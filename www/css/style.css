@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Special Elite';
+  src:  url('../fonts/SpecialElite.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+box-sizing: border-box;
+
+}
+
+body
+
+{    height: 100%;
+	background-color:#000;
+	color:lightgray;
+	
+}
+.container-fluid
+{   
+   
+    font-family: 'Special Elite', cursive;
+    margin-left: auto;
+    margin-right: auto;
+    min-height:100vh;
+    
+}
+#word{
+  
+    font-size:35px;
+    text-align: center;
+    min-height: 60px;
+    margin-bottom: 10vh;
+    
+    
+}
+#gallows
+{
+    transform: .3s ease-in;
+    text-align: center;
+    min-height: 280px;
+}
+
+#alfabet
+{  
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 280px;
+}
+.litera
+{       font-size:28px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border: 3px solid gray;
+    float: left;
+    cursor:pointer;
+    border-radius: 15px;
+    
+}
+.btn-letter{
+    background-color: #000000;
+    font-size:25px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border: 3px solid gray;
+    float: left;
+    cursor:pointer;
+    border-radius: 15px;
+
+
+}
+
+.btn-letter:hover {
+    color: white;
+    border: 3px solid white;
+}
+.reset
+{
+	color:green;
+	cursor: pointer;
+	font-size: 48px;
+}
+.true {
+    background-color: #003300;
+    color: #00C000;
+    border: 3px solid #00C000;
+    cursor: default;
+}
+.false {
+    background-color: #330000;
+    color:#C00000;
+    border: 3px solid #C00000;
+    cursor: default;
+}
+
+.reset:hover
+{
+	color:white;
+}
+.footer {
+   width:100%;
+   height:5vh;  
+   background:#2F2F2F;
+   margin-bottom:0 ;
+   text-align: center;
+   font-size: 10px;
+}
+.modal-content {
+    font-family: 'Special Elite', cursive;
+    border: 3px solid white;
+    background-color:#000;
+}
+.modal-footer{
+    text-align: center;
+}

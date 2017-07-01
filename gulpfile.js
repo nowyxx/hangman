@@ -48,6 +48,16 @@ AUTOPREFIXER
 gulp-autoprefixer
 npm install -save-dev gulp-autoprefixer
 */
+gulp.task("autopref",function(){
+    gulp.src("www/css/style.css")
+    .pipe(plumber())
+    .pipe(autoprefixer({
+        browsers:["last 2 versions","IE 9"]
+    }))
+    .pipe(gulp.dest("www/dist"));
+
+
+});
 
 /*###################NASŁUCHIWANIE NA ZMIANY######################*/
 gulp.task("watch", function() {

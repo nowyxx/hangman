@@ -41,7 +41,7 @@ function startgame() {
 		function (data) {
 			var pom = Math.floor(Math.random() * (121 - 1) + 1);
 			word = data.problems[pom].value;
-			//console.log(word);
+			console.log(word);
 			word_length = word.length;
 
 			for (i = 0; i < word_length; i++) {

@@ -27,10 +27,13 @@ header {
     font-size:3.0rem;
     text-align: center;
 }
-.param p {
-    text-align: center;
-    padding: 0;
+.param {
+    list-style-type: none;
 }
+    .param li {
+        text-align: center;
+        padding: 0;
+    }
 #word {
     padding: 5px 0 5px 0;
     margin:0;

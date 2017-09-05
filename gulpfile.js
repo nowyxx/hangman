@@ -1,8 +1,9 @@
-var gulp        = require('gulp'),
+const gulp = require('gulp'),
     browserSync = require('browser-sync'),
-    sass        = require('gulp-sass'),
-    plumber     = require("gulp-plumber"),
-    autoprefixer = require("gulp-autoprefixer");
+    sass = require('gulp-sass'),
+    plumber = require('gulp-plumber'),
+    autoprefixer = require('gulp-autoprefixer'),
+    babel = require('gulp-babel');
 
 
 /*####################################
@@ -43,6 +44,20 @@ gulp.task("server", function() {
     });
 });
    
+/*####################################
+BABEL
+npm install --save-dev gulp-babel babel-preset-env
+*/
+gulp.task('babel', function(){
+gulp.src('www/js/script.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
+        .pipe(gulp.dest('www/dist'))
+});
+
+
+
 /*#####################################
 AUTOPREFIXER
 gulp-autoprefixer
@@ -68,4 +83,4 @@ gulp.task("watch", function() {
 });
 
 
-gulp.task("default",["server","watch"]);
+gulp.task("default",["babel","server","watch"]);

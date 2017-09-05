@@ -111,7 +111,7 @@ header {
    margin-bottom:0 ;
    text-align: center;
    font-size: 10px;
-   height: 10vh;
+   height: 5rem;
 }
     .footer p {
         font-size: 1.2rem;
@@ -122,6 +122,9 @@ header {
     font-family: 'Special Elite', cursive;
     border: 3px solid #FFFFFF;
     background-color:#000;
+}
+.close div{
+    color: #FFFFFF;
 }
 .modal-footer{
     text-align: center;

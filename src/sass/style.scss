@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Special Elite';
+    src: url('../../fonts/SpecialElite.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$black: #000000;
+$font-color: #d3d3d3;
+$gray-border: #808080;
+$white: #FFFFFF;
+$green: #008000;
+$red: #C00000;
+$word-font-size: 2rem;
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $black;
+    color: $font-color;
+}
+
+.container-fluid {
+    font-family: 'Special Elite', cursive;
+}
+
+header {
+    font-size: 3.0rem;
+    text-align: center;
+}
+
+.param {
+    list-style-type: none;
+    li {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+#word {
+    padding: 5px 0 5px 0;
+    margin: 0;
+    font-size: $word-font-size;
+    text-align: center;
+}
+
+#gallows {
+    display: block;
+    min-height: 215px;
+    padding: 0;
+    margin: 0 auto 0 auto;
+}
+
+#gallows img {
+    width: 99%;
+}
+
+#alphabet-container {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    min-height: 240px;
+}
+
+.alphabet-row {
+    padding: 0;
+    margin: 0 auto 0 1%;
+}
+
+.btn-letter {
+    background-color: $black;
+    font-size: $word-font-size;
+    text-align: center;
+    margin: 0.5%;
+    width: 13%;
+    padding: 2% 0 2% 0;
+    border: 2px solid #808080;
+    float: left;
+    cursor: pointer;
+    border-radius: 15px;
+    &:hover {
+        color: $white;
+        border: 2px solid $white;
+    }
+}
+
+.reset {
+    color: $green;
+    cursor: pointer;
+    font-size: 48px;
+    &:hover {
+        color: $white;
+    }
+}
+
+.true {
+    background-color: #003300;
+    color: $green;
+    border: 2px solid $green;
+    cursor: default;
+}
+
+.false {
+    background-color: #330000;
+    color: $red;
+    border: 2px solid $red;
+    cursor: default;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    background: #2F2F2F;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 10px;
+    p {
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.modal-content {
+    font-family: 'Special Elite', cursive;
+    border: 3px solid $white;
+    background-color: $black;
+}
+
+.close div {
+    color: $white;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+@media (min-width:992px) {
+    html {
+        font-size: 100%;
+    }
+    .param p {
+        margin-top: 30px;
+        font-size: 1.5rem;
+    }
+    #word {
+        margin-bottom: 100px;
+        font-size: 2.5rem;
+        padding: 30px;
+    }
+}
+
+@media(max-width:479px) {
+    .footer {
+        display: none;
+    }
+}

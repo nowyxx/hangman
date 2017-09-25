@@ -1,86 +1,81 @@
-const gulp = require('gulp'),
+var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     sass = require('gulp-sass'),
-    plumber = require('gulp-plumber'),
-    autoprefixer = require('gulp-autoprefixer'),
+    autoprefixer = require("gulp-autoprefixer"),
+    plumber = require("gulp-plumber"),
     babel = require('gulp-babel');
 
 
 /*####################################
-KOMPILACJA SASS DO CSS
-1. Pobierz pluginn gulp-sass
+            SASS TO CSS COMPILE
+1. Download pluginn gulp-sass
 npm install gulp-sass --save-dev
-PLUMBER umożliwia obsługę błędu tzn. w razie np braku poprawności pliku nie zakańcza działania procesu co umożliwia poprawienie pliku i prawidłowe wykonanie się procesu
-
-
+PLUMBER allows to use error support in gulp.js file. In case of error  he is not  closing a process in file but freeze it to  repair those errors.
 /*#####################################
 AUTOPREFIXER
 gulp-autoprefixer
 npm install -save-dev gulp-autoprefixer
 
- 
- Czysta kompilacja sass do css + autoprefixy poniżej
 
-gulp.task("css",function(){
-    gulp.src("sciezka do pliku sass")
-    .pipe(plumber())
-    .pipe(sass.sync())// trzeba dodać sync by działało z plumberem
-    .pipe(autoprefixer({
-    browsers:["last 5 version","IE 9"]
-    }));
-    .pipe(gulp.dest("sciezkazapisudo kat"))
-    .pipe(browserSync.stream());//przeladowanie styli po zapisaniu
+SASS -> CSS + AUTOPREFIX 
+************************/
+gulp.task("css", function() {
+
+    gulp.src("src/sass/*.scss")
+        .pipe(plumber())
+        .pipe(sass.sync()) // plumber synchronize
+        .pipe(autoprefixer({
+            browsers: ["last 2 version", "IE 9"]
+        }))
+        .pipe(gulp.dest("src/dist/css/"))
+        .pipe(browserSync.stream()); //Reload
 });
-*/
+
 /*####################################
-Browser SYNC
+            Browser SYNC
 npm install browser-sync --save-dev
 **************************************/
 
-
 gulp.task("server", function() {
     browserSync.init({
-        server: "www/"
+        server: "src/"
     });
 });
-   
+
 /*####################################
-BABEL
+                BABEL  
+            ES6 -> ES5
 npm install --save-dev gulp-babel babel-preset-env
 */
-gulp.task('babel', function(){
-gulp.src('www/js/script.js')
+gulp.task('babel', function() {
+    gulp.src('src/js/script.js')
         .pipe(babel({
             presets: ['env']
         }))
-        .pipe(gulp.dest('www/dist'))
+        .pipe(gulp.dest('src/dist/js'))
 });
-
-
 
 /*#####################################
-AUTOPREFIXER
+            AUTOPREFIX ONLY
 gulp-autoprefixer
 npm install -save-dev gulp-autoprefixer
-*/
-gulp.task("autopref",function(){
-    gulp.src("www/css/style.css")
-    .pipe(plumber())
-    .pipe(autoprefixer({
-        browsers:["last 2 versions","IE 9"]
-    }))
-    .pipe(gulp.dest("www/dist"));
-
-
+**************************************/
+gulp.task("autopref", function() {
+    gulp.src("src/css/style.css")
+        .pipe(plumber())
+        .pipe(autoprefixer({
+            browsers: ["last 2 versions", "IE 9"]
+        }))
+        .pipe(gulp.dest("src/dist"));
 });
 
-/*###################NASŁUCHIWANIE NA ZMIANY######################*/
+/*###################CHANGES WATCHING######################*/
 gulp.task("watch", function() {
-
-    //gulp.watch("www/sass/**/*.scss",["css"]); tutaj nasłuchiwanie na scss żeby działało poprawnie należy usunąć css poniżej
-    gulp.watch(["www/*.html","www/**/*.js","www/css/*.css"], browserSync.reload);
+    //gulp.watch(["src/*.html","src/**/*.js","src/css/*.css"], browserSync.reload); CSS ONLY 
+    gulp.watch("src/sass/**/*.scss", ["css"]); // SASS
+    gulp.watch(["src/*.html", "src/**/*.js"], browserSync.reload);
 
 });
 
 
-gulp.task("default",["babel","server","watch"]);
+gulp.task("default", ["babel", "css", "server", "watch"]);
